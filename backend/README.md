@@ -132,7 +132,7 @@ The API will return three error types when requests fail:
       "id": 5,
       "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
     },
-    ...
+    
   ],
   "success": true,
   "total_questions": 12
@@ -153,7 +153,7 @@ The API will return three error types when requests fail:
 ```json
 // Response received from Creating a new question
 {
-    "success": True,
+    "success": true,
     "status_code": 200,
     "created": 13,
     "questions": [
@@ -165,7 +165,7 @@ The API will return three error types when requests fail:
       "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
     },
 
-    ...
+    
   ],
     "total_questions": 13
 }
@@ -173,7 +173,7 @@ The API will return three error types when requests fail:
 // Response received from search Post request
 
 {
-  "success": True,
+  "success": true,
   "search_term": "Whose autobiography is ...", 
   "questions": [
     {
@@ -184,7 +184,7 @@ The API will return three error types when requests fail:
       "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
     },
 
-    ...
+    
   ],
   "total_questions": 13,
 
@@ -224,7 +224,7 @@ The API will return three error types when requests fail:
       "id": 5,
       "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
     },
-    ...
+  
   ],
   "success": true,
   "total_questions": 11
@@ -254,7 +254,7 @@ The API will return three error types when requests fail:
 
 // Expected Response Body
 {
-  "success": True,
+  "success": true,
   "question": [], 
   "category": "Geography",
   "total_quiz_in_category": 6
