@@ -25,23 +25,40 @@ This will install all of the required packages we selected within the `requireme
 ### Database Setup
 With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
 ```bash
-psql trivia < trivia.psql
+psql trivia < /backend/trivia.psql
+```
+###
+Please feel free to change the `database_path` to your preferred path.
+
+```python
+database_name = "trivia"
+database_path = "postgresql://{}:{}@{}/{}".format('postgres', 'postgres', 'localhost:5434', database_name)
 ```
 
 ### Running the server
 
-From within the `./src` directory first ensure you are working using your created virtual environment.
+From within the `./backend` directory first ensure you are working using your created virtual environment.
 
 To run the server, execute:
 
+
 ```bash
+export FLASK_APP=flaskr
 flask run --reload
 ```
 
 The `--reload` flag will detect file changes and restart the server automatically.
 
 
-#
+
+### Running Tests
+
+In order to run the pre-written tests using the unittest library, you must change your working directory into `/backend` before you run your tests.
+
+```bash
+python3 test_flaskr.py
+```
+
 
 # API Reference
 
@@ -59,9 +76,21 @@ The API reference is not exhaustive as more features will be added to it from ti
 Errors are returned as JSON objects in the following format:
 ```json
 {
-    "success": False, 
-    "error": 400,
-    "message": "bad request"
+  "success": false, 
+  "error": 400,
+  "message": "bad request"
+}
+
+{
+  "success": false, 
+  "error": 404, 
+  "message": "resource not found"
+}
+
+{
+  "success": false, 
+  "error": 422, 
+  "message": "unprocessable"
 }
 ```
 The API will return three error types when requests fail:
@@ -195,7 +224,7 @@ The API will return three error types when requests fail:
 
 
 {
-  "success": True,
+  "success": true,
   "search_term": "Not available search", 
   "questions": [],
   "total_questions": 13,
@@ -234,7 +263,7 @@ The API will return three error types when requests fail:
 
 #### POST /quizzes
 - General:
-    - Guess what, you can actually play a game :[rocket]:
+    - Guess what, you can actually play a game :rocket:
        - This game accepts a request body comprising of a quiz category and a list to track previous or answered questions by id.
         - Firstly, a quiz_category object is selected
        - At each click the previous question list must be updated with previous question id. We do this to keep track.

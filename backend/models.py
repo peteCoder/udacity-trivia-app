@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 database_name = "trivia"
+# Please feel free to change the database path to your preferred path
 database_path = "postgresql://{}:{}@{}/{}".format('postgres', 'petertalk', 'localhost:5434', database_name)
 
 db = SQLAlchemy()

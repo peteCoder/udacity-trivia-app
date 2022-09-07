@@ -298,14 +298,6 @@ def create_app(test_config=None):
       new_questions_list = [question.format() for question in new_question_set]
       randomized_question_set = random.choice(new_questions_list)
 
-    print({
-      "success": True,
-      "question": randomized_question_set, 
-      "category": quiz_category['type'],
-      "total_quiz_in_category": num_of_question_in_category
-    })
-
-
     return jsonify({
       "success": True,
       "question": randomized_question_set, 
